@@ -56,7 +56,10 @@ Consider an answer generation task based on data from the [QASC](https://arxiv.o
 
 ---
 
-![sphere-view](1.png "Embedding Space for Answer Generation")
+##Embedding Space for Answer Generation
+
+<img src="1.png" alt= "Embedding Space for Answer Generation" width="300" height="300">
+
 
 
 
