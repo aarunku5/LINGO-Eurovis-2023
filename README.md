@@ -75,18 +75,14 @@ We select the following task for the root instruction:
 
 We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the subfolder "Tasks". The following observations of the linguistic characteristics of the various task instructions can be used to provide context to how links are formed between clusters.
 
-*** Bullet list**
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
 
-** * General Characteristics:**
-            * None of the tasks have the same source dataset.
-            * All of the tasks fall within the answer generation category.
-            * None of the tasks use verbatim definitions.
-            * None of thhe tasks have common positive/negative examples.
+#### General Characteristics:
+* None of the tasks have the same source dataset.
+* All of the tasks fall within the answer generation category.
+* None of the tasks use verbatim definitions.
+* None of the tasks have common positive/negative examples.
 
-**- Definitions:**
+#### Definitions:
             - T1-T7 all involve span-based selection to generate the answer. T8-T10 involve the generation of text-content based on the context of input, but which are not necessarily contained within the input.
             - T1, T2 exhibit high similarity in the definition, particularly in the case of 'Things to Avoid' as well as 'Emphasis and Caution'.
             - T3, T4 use similar language to T1, T2 and additionally specify that the shortest continuous text span should be selected to generate a relevant answer. Therefore they place further constraints on the expected output. 
@@ -94,6 +90,6 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
             - T6, T7 also specify that span-based selection needs to be used for a larger volume of text input (i.e., a paragraph is used as the input instead of 1-2 sentences). T7 additionally provides contextual info on the types of reasoning to perform on the given input. 
             - T8-T10 involve the generation of text as output with reference to the input context. T8 requires event durations to be specified based on common sense reasoning with relation to the input. T9 explicitly asks for conversational, non-stereotypical answers to be provided as a response to the input. T10 is a story completion task, and requires the model to provide the ending for a 3-sentence story.
 
-**- Positive Examples:**
+#### Positive Examples:
 
 
