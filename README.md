@@ -77,7 +77,7 @@ We select the following task for the root instruction:
 <img src="3b.png" alt= "Correlation 0.7" width="300" height="300">
 <img src="3c.png" alt= "Correlation 0.6" width="300" height="300"> -->
 
-We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the subfolder "Tasks". The following observations of the linguistic characteristics of various task instructions can be used to provide context to how links are formed between clusters:
+We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the folder "Tasks". The following observations of the linguistic characteristics of various task instructions can be used to provide context to how links are formed between clusters:
 
 #### General Characteristics:
 * None of the tasks have the same source dataset.
@@ -110,4 +110,36 @@ Comparing word overlap for positive and negative examples respectively (threshol
 * T9 has overlap between the positive and negative examples; however the explanations exhibit higher patterns of variation.
 * T10 has overlap within postive examples; however the explanations vary in language and structure.
 
+---
+
 ## Model Results
+
+---
+
+## Bias Metrics
+
+---
+
+## Impact of Instruction Modification
+
+The variants of T1 can be found in the subfolder "Variants" (V1-V8). The variants can be grouped into 3 modification stages:
+* V1-V2: Definition modified
+* V6-V8: Example explanations modified 
+* V3-V5: Example text modified (i.e., new examples either replace or are added to the instruction)
+
+Note that changes made for each stage of modification are carried over to the next stage. We discuss the implications of variants in terms of:
+(i) effect on model performance
+(ii) effect on bias-metrics
+(iii) correlation with other tasks
+
+### V1
+### V2
+### V3
+### V4
+### V5
+### V6
+### V7
+### V8
+
+
+
