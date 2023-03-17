@@ -1,8 +1,23 @@
 # LINGO-Eurovis-2023
 
-Consider an answer generation task based on data from the [QASC](https://arxiv.org/pdf/1910.11473.pdf) dataset.
+We investigate answer generation tasks, i.e., tasks which require word/sentence answers from the model to answer a given question.
+---
 
-**Source:** QASC
+## Embedding Space for Answer Generation
+
+<img src="1.png" alt= "Embedding Space for Answer Generation" width="300" height="300">
+
+We note that answer generation tasks are distributed sparsely around the sphere. There are also no tight local clusters based on the source datasets. This indicates higher linguistic diversity in the task definitions for this task type.
+
+---
+
+## Selecting Root Instruction
+
+<img src="2.png" alt= "Root Instruction QASC" width="300" height="300">
+
+We select the following task for the root instruction:
+
+**Source:** [QASC](https://arxiv.org/pdf/1910.11473.pdf)
 
 **Categories:** Question Answering -> Contextual Question Answering -> Extractive; Text Span Selection; Reasoning -> Commonsense Reasoning
 
@@ -53,12 +68,6 @@ Consider an answer generation task based on data from the [QASC](https://arxiv.o
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survived.",
             "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"survive\". Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts."
-
----
-
-##Embedding Space for Answer Generation
-
-<img src="1.png" alt= "Embedding Space for Answer Generation" width="300" height="300">
 
 
 
