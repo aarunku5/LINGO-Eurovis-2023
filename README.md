@@ -5,7 +5,7 @@ We investigate answer generation tasks, i.e., tasks which require word/sentence 
 
 ## Embedding Space for Answer Generation
 
-<img src="1.png" alt= "Embedding Space for Answer Generation" width="300" height="300">
+<img src="Images/1.png" alt= "Embedding Space for Answer Generation" width="300" height="300">
 
 We note that answer generation tasks are distributed sparsely around the sphere. There are also no tight local clusters based on the source datasets. This indicates higher linguistic diversity in the task definitions for this task type.
 
@@ -13,7 +13,7 @@ We note that answer generation tasks are distributed sparsely around the sphere.
 
 ## Selecting Root Instruction
 
-<img src="2.png" alt= "Root Instruction QASC" width="300" height="300">
+<img src="Images/2.png" alt= "Root Instruction QASC" width="300" height="300">
 
 We select the following task for the root instruction:
 
