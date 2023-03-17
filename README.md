@@ -17,13 +17,13 @@ We note that answer generation tasks are distributed sparsely around the sphere.
 
 We select the following task for the root instruction:
 
-**Source:** [QASC](https://arxiv.org/pdf/1910.11473.pdf)
+1. **Source:** [QASC](https://arxiv.org/pdf/1910.11473.pdf)
 
-**Categories:** Question Answering -> Contextual Question Answering -> Extractive; Text Span Selection; Reasoning -> Commonsense Reasoning
+2. **Categories:** Question Answering -> Contextual Question Answering -> Extractive; Text Span Selection; Reasoning -> Commonsense Reasoning
 
-**Definition:** _Write a correct answer to the given question based on its associated fact. Make sure that your answer is contained in the associated fact.Things to avoid: Don't be creative and introduce any new word that is not mentioned in the associated fact! Remember that, the associated fact has been rearranged to form the question. So, the correct answer words must lie within the associated fact.\nEmphasis & Caution: The correct answer can be a word, phrase, or even a sentence._
+3. **Definition:** _Write a correct answer to the given question based on its associated fact. Make sure that your answer is contained in the associated fact.Things to avoid: Don't be creative and introduce any new word that is not mentioned in the associated fact! Remember that, the associated fact has been rearranged to form the question. So, the correct answer words must lie within the associated fact.\nEmphasis & Caution: The correct answer can be a word, phrase, or even a sentence._
 
-**Positive Examples:**
+4. **Positive Examples:**
 
 1.
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
@@ -54,7 +54,7 @@ We select the following task for the root instruction:
             "output": "lightning.",
             "explanation": "The answer is present in the span of the fact."
 
-**Negative Examples:**
+5. **Negative Examples:**
 
 1.
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
