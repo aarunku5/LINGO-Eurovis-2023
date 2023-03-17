@@ -71,10 +71,13 @@ We select the following task for the root instruction:
 
 ---
 
-## Correlation View
+## Correlation
 
-We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the subfolder "Tasks". The following observations of the linguistic characteristics of the various task instructions can be used to provide context to how links are formed between clusters.
+<!-- <img src="3a.png" alt= "Correlation 0.8" width="300" height="300">
+<img src="3b.png" alt= "Correlation 0.7" width="300" height="300">
+<img src="3c.png" alt= "Correlation 0.6" width="300" height="300"> -->
 
+We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the subfolder "Tasks". The following observations of the linguistic characteristics of various task instructions can be used to provide context to how links are formed between clusters:
 
 #### General Characteristics:
 * None of the tasks have the same source dataset.
@@ -82,7 +85,7 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 * None of the tasks use verbatim definitions.
 * None of the tasks have common positive/negative examples.
 
-#### Definitions:
+#### Task Nature
 * T1-T7 all involve span-based selection to generate the answer. T8-T10 involve the generation of text-content based on the context of input, but which are not necessarily contained within the input.
 * T1, T2 exhibit high similarity in the definition, particularly in the case of 'Things to Avoid' as well as 'Emphasis and Caution'.
 * T3, T4 use similar language to T1, T2 and additionally specify that the shortest continuous text span should be selected to generate a relevant answer. Therefore they place further constraints on the expected output. 
@@ -90,6 +93,21 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 * T6, T7 also specify that span-based selection needs to be used for a larger volume of text input (i.e., a paragraph is used as the input instead of 1-2 sentences). T7 additionally provides contextual info on the types of reasoning to perform on the given input. 
 * T8-T10 involve the generation of text as output with reference to the input context; however, the text generated does not involve span-based selection, and is instead free response. T8 requires event durations to be specified based on common sense reasoning with relation to the input. T9 explicitly asks for conversational, non-stereotypical answers to be provided as a response to the input. T10 is a story completion task, and requires the model to provide the ending for a 3-sentence story.
 
-#### Positive Examples:
+---
 
+## Instruction Decomposition
 
+<!-- <img src="4a.png" alt= "Word Overlap 0.5 P" width="300" height="300">
+<img src="4b.png" alt= "Word Overlap 0.5 N" width="300" height="300"> -->
+
+Comparing word overlap for positive and negative examples respectively (threshold 0.5 since there is greater linguistic variation between tasks, in order to observe chord formation), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. On observing the text associated with these tasks using the correlation view, we can conclude that the chord associations follow from the characteristics of the task examples we observe, listed below:
+
+* In general, the number of positive examples exceeds the number of negative examples for all the tasks; non of the tasks have more than 3 negative examples. Some tasks have a large number of positive examples (>2) -- T1, T4, T6, T7, T10.
+* T1, T6, T7 have overlap between positive and negative examples; also, the explanations given are short-- they only talk about whether the output is from the input span or not and are formulaic in structure.
+* T3 has no overlap, and has richer explanation text which is unique to each example.
+* T2, T4 have overlap within positive examples and T5 has no overlap; additionally, the explanation text for all these tasks also follows a uniform pattern and mentions that the span is present within the question as the justification for correctness or incorrectness of model output.
+* T8 has overlap between positive and negative examples; the overlapping examples follow similar explanation patterns.
+* T9 has overlap between the positive and negative examples; however the explanations exhibit higher patterns of variation.
+* T10 has overlap within postive examples; however the explanations vary in language and structure.
+
+## Model Results
