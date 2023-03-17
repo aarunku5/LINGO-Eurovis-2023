@@ -75,11 +75,11 @@ We select the following task for the root instruction:
 
 We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the subfolder "Tasks". The following observations of the linguistic characteristics of the various task instructions can be used to provide context to how links are formed between clusters.
 
-**- General Characteristics:**
-            - None of the tasks have the same source dataset.
-            - All of the tasks fall within the answer generation category.
-            - None of the tasks use verbatim definitions.
-            - None of thhe tasks have common positive/negative examples.
+** * General Characteristics:**
+            * None of the tasks have the same source dataset.
+            * All of the tasks fall within the answer generation category.
+            * None of the tasks use verbatim definitions.
+            * None of thhe tasks have common positive/negative examples.
 
 **- Definitions:**
             - T1-T7 all involve span-based selection to generate the answer. T8-T10 involve the generation of text-content based on the context of input, but which are not necessarily contained within the input.
