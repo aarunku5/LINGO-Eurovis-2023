@@ -114,9 +114,14 @@ Comparing word overlap for positive and negative examples respectively (threshol
 
 ## Model Results
 
+On observing the GPT-3 results for task instances from T1– T10, Owen notes a general trend across all the datasets: task in- stances in bins with higher word similarity (> 0.7) to the instruc- tion examples are more accurately solved. Owen confirms that T1– T4 and T7 show similar performance distributions, with most of the high-performing task instances being in high similarity bins. T5 and T8–T10 have a greater proportion of task instances located in bins ranging from [0.55-0.75]; these bins achieve ∼20-35% ac- curacy. T6 is an outlier with a more uniform distribution of task instances in similarity bins, all ranging from ∼20-30% accuracy. Owen partially attributes this to T6 containing non-English input. Owen then juxtaposes top ranked task instances belonging to bins [0.85-0.90] against instruction examples for T1-T4. He notes that these task instances follow similar topics to the examples, and are solved using similar output patterns, as highlighted in Figure 5(5).
+
+
 ---
 
 ## Bias Metrics
+
+Owen checks the unique vocabulary contributed by examples in each task instruction (5.1). He finds that T6 and T7 contribute the highest unique vocabulary, while T1–T4 contribute the lowest. T6 and T7 are also the hardest for the model to solve (as previously seen in (4)). Next, Owen examines the Jaccard Similarity of ad- verbs across full task instructions compared against their respective task instances (5.2). Here, T5–T7 show the lowest values, which indicates higher variation in the data. Owen can partially attribute this to non-repetition of phrases from the definition in the example explanations.
 
 ---
 
@@ -133,6 +138,9 @@ Note that changes made for each stage of modification are carried over to the ne
 (iii) correlation with other tasks
 
 ### V1
+
+(6) Finally, Owen modifies the task instruction for T1, in order to (i) reduce the similarity bias between instruction examples and task instances, and (ii) reduce overlap between the instruction definition and instruction example explanations. He updates the definition and replaces a positive example, so that the instruction now contributes a higher proportion of vocabulary and adverbs (6.1). Owen notices that the beeswarm updates (6.2) for T1 to show decreased overall performance, with fewer samples in similarity bins > 0.9 as well as fewer samples crossing 80% accuracy. Additionally, T1 now ex- hibits lower Jaccard similarity (6.3) and higher unique vocabulary (6.4). Overall, Owen’s modifications achieve a decrease in accu- racy, Jaccard similarity for words, POS-tags, and n-grams, and an increase in unique vocabulary. Hence by iteratively changing the task instruction (for instance, replacing more examples) Owen can further reduce instruction bias for T1, and create a more difficult task instruction for the model to solve.
+
 ### V2
 ### V3
 ### V4
