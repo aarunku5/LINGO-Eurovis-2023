@@ -53,3 +53,13 @@ Consider an answer generation task based on data from the [QASC](https://arxiv.o
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survived.",
             "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"survive\". Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts."
+
+---
+
+
+
+
+
+
+
+
