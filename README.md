@@ -4,7 +4,7 @@ Consider an answer generation task based on data from the [QASC](https://arxiv.o
 
 **Source:** QASC
 
-**Categories:** Question Answering -> Contextual Question Answering -> Extractive; Text Span Selection; Reasoning -> Commonsense Reasoning"
+**Categories:** Question Answering -> Contextual Question Answering -> Extractive; Text Span Selection; Reasoning -> Commonsense Reasoning
 
 **Definition:** _Write a correct answer to the given question based on its associated fact. Make sure that your answer is contained in the associated fact.Things to avoid: Don't be creative and introduce any new word that is not mentioned in the associated fact! Remember that, the associated fact has been rearranged to form the question. So, the correct answer words must lie within the associated fact.\nEmphasis & Caution: The correct answer can be a word, phrase, or even a sentence._
 
@@ -56,7 +56,7 @@ Consider an answer generation task based on data from the [QASC](https://arxiv.o
 
 ---
 
-
+![sphere-view](1.png "Embedding Space for Answer Generation")
 
 
 
