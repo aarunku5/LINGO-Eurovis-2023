@@ -10,6 +10,8 @@ We investigate answer generation tasks, i.e., tasks which require word/sentence 
 
 We note that answer generation tasks are distributed sparsely around the sphere. There are also no tight local clusters based on the source datasets. This indicates higher linguistic diversity in the task definitions for this task type.
 
+**Insight: Further investigation of answer generation tasks belonging in a given quadrant of the embedding sphere.**
+
 ---
 
 ## Selecting Root Instruction
@@ -70,6 +72,8 @@ We select the following task for the root instruction:
             "output": "survived.",
             "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"survive\". Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts."
 
+**Insight: Selecting QASC as the root instruction, compare the distribution of tasks across domains, source dataset, and task type that fall wihtin k=10.**
+
 ---
 
 ## Correlation
@@ -92,26 +96,21 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 * T6, T7 also specify that span-based selection needs to be used for a larger volume of text input (i.e., a paragraph is used as the input instead of 1-2 sentences). T7 additionally provides contextual info on the types of reasoning to perform on the given input. 
 * T8-T10 involve the generation of text as output with reference to the input context; however, the text generated does not involve span-based selection, and is instead free response. T8 requires event durations to be specified based on common sense reasoning with relation to the input. T9 explicitly asks for conversational, non-stereotypical answers to be provided as a response to the input. T10 is a story completion task, and requires the model to provide the ending for a 3-sentence story.
 
+**Insight: Tasks T1-T5 are the same task type. T6, T7 parse longer input lengths but are also the same task type. T8-T10 involve answer generation, but produce freeform output instead of span-based selection. Additionally, the similarity of T8, T9, T10 to T1 are 0.72, 0.63, 0.61 respectively. We  must further investigate word overlap and length of the task examples to gauge the impact of task type on level of diversity.**
+
 ---
 
 ## Instruction Decomposition
 
 ### Positive Examples, Word Overlap 
 
-https://user-images.githubusercontent.com/54283572/226135508-7ca88100-45da-4c6e-ae95-531b9ddca2f7.mov
+https://user-images.githubusercontent.com/54283572/226142736-1ca42c13-0be0-45f9-be24-989ccc153628.mov
 
 ### Negative Examples, Word Overlap 
 
-https://user-images.githubusercontent.com/54283572/226135547-59062c03-b3e3-46ca-92f6-555f2d1527d7.mov
-
-### Positive Examples, Length 
-
-### Negative Examples, Length
-
+https://user-images.githubusercontent.com/54283572/226142739-6cfa6aee-95d9-4b80-9d6b-da4feaece7e6.mov
 
 * Comparing word overlap for positive and negative examples respectively (threshold 0.5 since there is greater linguistic variation between tasks, in order to observe chord formation), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. 
-* Comparing length  for positive and negative examples respectively (threshold 0.7 since there is comparatively lesser variation in length between tasks), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. 
-
 * On observing the text associated with these tasks using the correlation view, we can conclude that the chord associations follow from the characteristics of the task examples we observe, listed below:
   * In general, the number of positive examples exceeds the number of negative examples for all the tasks; non of the tasks have more than 3 negative examples. Some tasks have a large number of positive examples (>2) -- T1, T4, T6, T7, T10.
   * Overall, the explanations for negative examples show higher linguistic diversity than for positive examples; they also show higher variation in length than the positive examples.
@@ -121,6 +120,25 @@ https://user-images.githubusercontent.com/54283572/226135547-59062c03-b3e3-46ca-
   * T8 has overlap between positive and negative examples; the overlapping examples follow similar explanation patterns.
   * T9 has overlap between the positive and negative examples; however the explanations exhibit higher patterns of variation.
   * T10 has overlap within postive examples; however the explanations vary in language and structure.
+
+**Insight: Word overlap is not very useful when comparing T1 to tasks, other than T2 and T5. The diversity of the examples between tasks is such that only those tasks with highly structured, templatized explanations (particularly for positive examples) show significant mutual relationships; we also have to set the threshold quite low to generate chords for tasks other than T1.**
+
+### Positive Examples, Length 
+
+https://user-images.githubusercontent.com/54283572/226142829-aa38de65-32c8-46e1-82cb-8b311a96c132.mov
+
+### Negative Examples, Length
+
+https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-9ebc-3157426bc566.mov
+
+* Comparing length for positive and negative examples respectively (threshold 0.7 since there is comparatively lesser variation in length between tasks):
+  *  T1 is linked to T2, T5, T8. These have 1-2 sentence input, produce 1 word output, and have similar length explanations for positive examples. Though length of negative explanations is usually longer than positive ones, they do not vary much across these tasks.
+  *  T6, T7 are linked only to each other. These tasks have long, paragraph length inputs, which dictates their low similarity to the other tasks, though the explanation length is comparable to some of the lesser input-volume tasks.
+  * T3, T4 are mutually linked. They have slightly longer explanations compared to T1 and T5, and T3 and T4 additionally produce multi-word output. 
+  *  T9, T10 are mutually linked. They both produce sentence length output, with an input of 2-3 sentences. Explanations lengths are comparable respectively for postive and negative examples between these tasks. 
+
+**Insight: Length-based comparison seems to depend highly on the input/output volume as opposed to the explanation lengths comparing T1 against T6, T7, T9, T10. Explanations impact this relationship in the case of T3, T4, which outstrip T1 in explanation length; we set the threshold high in order to elicit this result.**
+
 
 ---
 
