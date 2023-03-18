@@ -74,7 +74,7 @@ We select the following task for the root instruction:
 
 ## Correlation
 
-<img src="Images/3.png" alt= "Correlations" width="1093" height="270">
+<img src="Images/3.png" alt= "Correlations" width="1093" height="250">
 
 We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks (T1-T10) can be found in the folder "Tasks". The following observations of the linguistic characteristics of various task instructions can be used to provide context to how links are formed between clusters:
 
