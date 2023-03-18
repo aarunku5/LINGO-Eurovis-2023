@@ -153,7 +153,7 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 * Tasks with structured, templatized explanations (T1-T4, T6-T7), as well as those with overlap between positive and negative examples (T1, T6, T7) all show higher average performance, with a higher number of instances in high similarity bins.
 
 
-**Insight: The highest performing tasks have no overlap between positive and negative examples, more diverse explanations,  **
+**Insight: The lowest performing tasks have no overlap between positive and negative examples, more diverse explanations, and a more uniform distribution in terms of similarity bins. This indicates that models find these tasks relatively more difficult to solve, i.e., these tasks may potentially have lower bias in comparison to remaining tasks.**
 ---
 
 ## Bias Metrics
