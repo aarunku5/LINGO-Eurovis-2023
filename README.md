@@ -144,9 +144,16 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 
 ## Model Results
 
-On observing the GPT-3 results for task instances from T1– T10, Owen notes a general trend across all the datasets: task in- stances in bins with higher word similarity (> 0.7) to the instruc- tion examples are more accurately solved. Owen confirms that T1– T4 and T7 show similar performance distributions, with most of the high-performing task instances being in high similarity bins. T5 and T8–T10 have a greater proportion of task instances located in bins ranging from [0.55-0.75]; these bins achieve ∼20-35% ac- curacy. T6 is an outlier with a more uniform distribution of task instances in similarity bins, all ranging from ∼20-30% accuracy. Owen partially attributes this to T6 containing non-English input. Owen then juxtaposes top ranked task instances belonging to bins [0.85-0.90] against instruction examples for T1-T4. He notes that these task instances follow similar topics to the examples, and are solved using similar output patterns, as highlighted in Figure 5(5).
+<img src="Images/5.png" alt= "Root Instruction QASC" width="1043" height="270">
+
+* Task instances in bins with higher similarity to the examples are more accurately solved. T1, T2, T6, T7 have similar performance distributions in this regard, with a higher proportion of samples in 0.65+ similarity bins.
+* T5, T8 have more diversity in instances in comparison to the positive/negative examples (i.e., most instances range from 0.4-0.6 similarity) 
+* All the tasks have some empty bins ranging in either 0.75+ or 0.25- similarity.
+* Tasks with greater diversity in the explanation and output text, i.e., T5, T8-T10 have a more uniformly distributed performance.
+* Tasks with structured, templatized explanations (T1-T4, T6-T7), as well as those with overlap between positive and negative examples (T1, T6, T7) all show higher average performance, with a higher number of instances in high similarity bins.
 
 
+Insight:
 ---
 
 ## Bias Metrics
