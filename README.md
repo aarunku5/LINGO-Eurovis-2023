@@ -166,13 +166,18 @@ Owen checks the unique vocabulary contributed by examples in each task instructi
 
 The variants of T1 can be found in the subfolder "Variants" (V1-V8). The variants can be grouped into 3 modification stages:
 * V1-V2: Definition modified
-* V6-V8: Example explanations modified 
-* V3-V5: Example text modified (i.e., new examples either replace or are added to the instruction)
+* V3-V5: Example explanations modified 
+* V6-V8: Example text modified (i.e., new examples either replace or are added to the instruction)
 
-Note that changes made for each stage of modification are carried over to the next stage. We discuss the implications of variants in terms of:
+We discuss motivation of the change made with reference to T2-T10 performance, as well as the implications of variants in terms of:
 (i) effect on model performance
 (ii) effect on bias-metrics
 (iii) correlation with other tasks
+
+Note: 
+* Changes made for each stage of modification are carried over to the next stage. 
+* We summarize the change in respective statistics across all variants in table form for the purpose of brevity. 
+* Updated panels are shown only for V8 (the final variant). 
 
 ### V1
 
