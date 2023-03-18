@@ -96,20 +96,29 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 
 ## Instruction Decomposition
 
+### Positive Examples, Word Overlap 
+
 https://user-images.githubusercontent.com/54283572/226134346-0ce67496-3338-4a52-89f3-8154845338d5.mov
 
-<!-- <img src="4a.png" alt= "Word Overlap 0.5 P" width="300" height="300">
-<img src="4b.png" alt= "Word Overlap 0.5 N" width="300" height="300"> -->
+### Negative Examples, Word Overlap 
 
-Comparing word overlap for positive and negative examples respectively (threshold 0.5 since there is greater linguistic variation between tasks, in order to observe chord formation), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. On observing the text associated with these tasks using the correlation view, we can conclude that the chord associations follow from the characteristics of the task examples we observe, listed below:
+### Positive Examples, Length 
 
-* In general, the number of positive examples exceeds the number of negative examples for all the tasks; non of the tasks have more than 3 negative examples. Some tasks have a large number of positive examples (>2) -- T1, T4, T6, T7, T10.
-* T1, T6, T7 have overlap between positive and negative examples; also, the explanations given are short-- they only talk about whether the output is from the input span or not and are formulaic in structure.
-* T3 has no overlap, and has richer explanation text which is unique to each example.
-* T2, T4 have overlap within positive examples and T5 has no overlap; additionally, the explanation text for all these tasks also follows a uniform pattern and mentions that the span is present within the question as the justification for correctness or incorrectness of model output.
-* T8 has overlap between positive and negative examples; the overlapping examples follow similar explanation patterns.
-* T9 has overlap between the positive and negative examples; however the explanations exhibit higher patterns of variation.
-* T10 has overlap within postive examples; however the explanations vary in language and structure.
+### Negative Examples, Length
+
+
+* Comparing word overlap for positive and negative examples respectively (threshold 0.5 since there is greater linguistic variation between tasks, in order to observe chord formation), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. 
+* Comparing length  for positive and negative examples respectively (threshold 0.7 since there is comparatively lesser variation in length between tasks), we find that T1 is linked to T2, T5, T6, T7. T2, T4, T8 are also linked. T9, T10 are not linked to any of the other tasks. 
+
+* On observing the text associated with these tasks using the correlation view, we can conclude that the chord associations follow from the characteristics of the task examples we observe, listed below:
+  * In general, the number of positive examples exceeds the number of negative examples for all the tasks; non of the tasks have more than 3 negative examples. Some tasks have a large number of positive examples (>2) -- T1, T4, T6, T7, T10.
+  * Overall, the explanations for negative examples show higher linguistic diversity than for positive examples; they also show higher variation in length than the positive examples.
+  * T1, T6, T7 have overlap between positive and negative examples; also, the explanations given are short-- they only talk about whether the output is from the input span or not and are formulaic in structure.
+  * T3 has no overlap, and has richer explanation text which is unique to each example.
+  * T2, T4 have overlap within positive examples and T5 has no overlap; additionally, the explanation text for all these tasks also follows a uniform pattern and mentions that the span is present within the question as the justification for correctness or incorrectness of model output.
+  * T8 has overlap between positive and negative examples; the overlapping examples follow similar explanation patterns.
+  * T9 has overlap between the positive and negative examples; however the explanations exhibit higher patterns of variation.
+  * T10 has overlap within postive examples; however the explanations vary in language and structure.
 
 ---
 
