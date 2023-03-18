@@ -96,9 +96,7 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 
 ## Instruction Decomposition
 
-<video width="300" height="300" controls>
-  <source src="Images/4.mov" type="video/mov">
-</video>
+https://user-images.githubusercontent.com/54283572/226134346-0ce67496-3338-4a52-89f3-8154845338d5.mov
 
 <!-- <img src="4a.png" alt= "Word Overlap 0.5 P" width="300" height="300">
 <img src="4b.png" alt= "Word Overlap 0.5 N" width="300" height="300"> -->
