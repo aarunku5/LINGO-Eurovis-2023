@@ -144,7 +144,7 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 
 ## Model Results
 
-<img src="Images/5.png" alt= "Root Instruction QASC" width="1043" height="270">
+<img src="Images/5.png" alt= "Root Instruction QASC" width="1200" height="675">
 
 * Task instances in bins with higher similarity to the examples are more accurately solved. T1, T2, T6, T7 have similar performance distributions in this regard, with a higher proportion of samples in 0.65+ similarity bins.
 * T5, T8 have more diversity in instances in comparison to the positive/negative examples (i.e., most instances range from 0.4-0.6 similarity) 
@@ -153,7 +153,7 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 * Tasks with structured, templatized explanations (T1-T4, T6-T7), as well as those with overlap between positive and negative examples (T1, T6, T7) all show higher average performance, with a higher number of instances in high similarity bins.
 
 
-Insight:
+**Insight: The highest performing tasks have no overlap between positive and negative examples, more diverse explanations,  **
 ---
 
 ## Bias Metrics
