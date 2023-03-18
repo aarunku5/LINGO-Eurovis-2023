@@ -98,9 +98,11 @@ We show correlation views for link thresholds of 0.8, 0.7, and 0.6. The 10 tasks
 
 ### Positive Examples, Word Overlap 
 
-https://user-images.githubusercontent.com/54283572/226134346-0ce67496-3338-4a52-89f3-8154845338d5.mov
+https://user-images.githubusercontent.com/54283572/226135508-7ca88100-45da-4c6e-ae95-531b9ddca2f7.mov
 
 ### Negative Examples, Word Overlap 
+
+https://user-images.githubusercontent.com/54283572/226135547-59062c03-b3e3-46ca-92f6-555f2d1527d7.mov
 
 ### Positive Examples, Length 
 
