@@ -270,6 +270,6 @@ The modification stages for T1 are:
             
 ---
 
-<img src="Images/7a.png" alt= "Metrics Updated" width="1000" height="350">
+<img src="Images/7a.png" alt= "Metrics Updated" width="1000" height="700">
 
 Overall, this case study seeks to simultaneously increase the inductive bias of the instruction given, while decreasing the spurious bias. By using different styles of explanations for the given output and ensuring no example overlap, we simultaneously increase the vocabulary, POS tag, and n-gram diversity, while either maintaining or decreasing the Jaccard similarity and Normalized Word Overlap. Our net changes lead to an increase in the model performance. Most instances show accuracy closer to the new average accuracy for T1 (0.64); additionally, the instance similarity bins range from 0.35-0.75, which indicates better inductive bias for the model to understand and solve the task.
