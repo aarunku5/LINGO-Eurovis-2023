@@ -158,7 +158,7 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 
 ## Bias Metrics
 
-<img src="Images/6a.png" alt= "Bias Bar" width="1200" height="525">
+<img src="Images/6a.png" alt= "Bias Bar" width="1200" height="395">
 
 * Comparing the definitions of the task instructions, T7-T10 contribute higher proportions of unique vocabulary. These tasks also have the maximum length. 
   * When considering the proportion of the length that has unique vocabulary however, T5, T8, T9, T10 have the highest contributions. These tasks are also among those ones that show the lowest model performance. 
