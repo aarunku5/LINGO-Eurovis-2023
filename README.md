@@ -32,26 +32,32 @@ We select the following task for the root instruction:
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
             "output": "pesticides.",
             "explanation": "The answer is present in the span of the fact."
+
 2.
             "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
             "output": "soil.",
             "explanation": "The answer is present in the span of the fact."
+
 3.
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survive.",
             "explanation": "The answer is present in the span of the fact."
+
 4.
             "input": "Fact: a radio converts electrical energy into sound. \nQuestion: a radio converts electrical energy into?",
             "output": "sound.",
             "explanation": "The answer is present in the span of the fact."
+
 5.
             "input": "Fact: chopping down trees causes animals to move to another habitat. \nQuestion: what might cause animals to move to another habitat?",
             "output": "chopping down trees.",
             "explanation": "The answer is present in the span of the fact."
+
 6.
             "input": "Fact: a protractor  can be used to measure the angles of a prism. \nQuestion: What would you use to measure the angles of a prism?",
             "output": "a protractor.",
             "explanation": "The answer is present in the span of the fact."
+
 7.
             "input": "Fact: lightning can cause harm to animals. \nQuestion: What might cause harm to animals?",
             "output": "lightning.",
@@ -63,10 +69,12 @@ We select the following task for the root instruction:
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
             "output": "Plastic.",
             "explanation": "Even though the answer \"plastic\" is factually correct as plastic can harm animals, since it is not present in the given fact is is not a good answer. Note that, the correct answer words must lie within the associated fact."
+
 2.
             "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
             "output": "soil and trees.",
             "explanation": "The words \"and trees\" are not present in the associated fact. So, it's a bad answer."
+
 3.
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survived.",
@@ -220,14 +228,17 @@ The modification stages for T1 are:
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
             "output": "pesticides.",
             "explanation": "The question paraphrases the fact and does not use the word 'pesticides'."
+
 2.
             "input": "Fact: a radio converts electrical energy into sound. \nQuestion: a radio converts electrical energy into?",
             "output": "sound.",
             "explanation": "The answer is present in the span of the fact. The fact is truncated to generate the question, so the remaining part of the fact is the answer."
+
 3.
             "input": "Fact: automobile engines burn gasoline to convert the fuel's energy into mechanical energy. \nQuestion: Why do automobile engines burn gasoline?",
             "output": "Automobiles burn gasoline to release the chemical energy of the fuel to provide mechanical energy."
             "explanation": "The question asks 'why' and the exact text of the fact is restated to answer to the question."
+
 4.
             "input": "Fact: Scales are used to determine weight in pounds. \nQuestion: How can we find out how much something weighs?",
             "output": "Using scales."
@@ -246,10 +257,12 @@ The modification stages for T1 are:
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
             "output": "Plastic.",
             "explanation": "Even though the answer \"plastic\" is factually correct as plastic can harm animals, since it is not present in the given fact is is not a good answer. Note that, the correct answer words must lie within the associated fact."
+
 2.
             "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
             "output": "soil and trees.",
             "explanation": "Even though the answer \"soil and trees\" is factually correct as they both are formed by rain, since it is not present in the given fact this is a bad answer. Note that, the correct answer words must lie within the associated fact wo be a good answer."
+
 3.
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survived.",
