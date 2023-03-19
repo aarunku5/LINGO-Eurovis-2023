@@ -249,7 +249,7 @@ The modification stages for T1 are:
 2.
             "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
             "output": "soil and trees.",
-            "explanation": "The words \"and trees\" are not present in the associated fact. So, it's a bad answer."
+            "explanation": "Even though the answer \"soil and trees\" is factually correct as they both are formed by rain, since it is not present in the given fact this is a bad answer. Note that, the correct answer words must lie within the associated fact wo be a good answer."
 3.
             "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
             "output": "survived.",
@@ -257,14 +257,4 @@ The modification stages for T1 are:
             
 ---
 
-
-
-
-
-- Defn/PE/NE
-- Count, Jaccard Sim, Overlap: unique vocab, adj, adv, v, n, bi, tri
-
-Owen checks the unique vocabulary contributed by examples in each task instruction (5.1). He finds that T6 and T7 contribute the highest unique vocabulary, while T1–T4 contribute the lowest. T6 and T7 are also the hardest for the model to solve (as previously seen in (4)). Next, Owen examines the Jaccard Similarity of ad- verbs across full task instructions compared against their respective task instances (5.2). Here, T5–T7 show the lowest values, which indicates higher variation in the data. Owen can partially attribute this to non-repetition of phrases from the definition in the example explanations.
-
-(6) Finally, Owen modifies the task instruction for T1, in order to (i) reduce the similarity bias between instruction examples and task instances, and (ii) reduce overlap between the instruction definition and instruction example explanations. He updates the definition and replaces a positive example, so that the instruction now contributes a higher proportion of vocabulary and adverbs (6.1). Owen notices that the beeswarm updates (6.2) for T1 to show decreased overall performance, with fewer samples in similarity bins > 0.9 as well as fewer samples crossing 80% accuracy. Additionally, T1 now ex- hibits lower Jaccard similarity (6.3) and higher unique vocabulary (6.4). Overall, Owen’s modifications achieve a decrease in accu- racy, Jaccard similarity for words, POS-tags, and n-grams, and an increase in unique vocabulary. Hence by iteratively changing the task instruction (for instance, replacing more examples) Owen can further reduce instruction bias for T1, and create a more difficult task instruction for the model to solve.
-
+Overall, this case study seeks to simultaneously increase the inductive bias of the instruction given, while decreasing the spurious bias. By using different styles of explanations for the given output and ensuring no example overlap, we simultaneously increase the vocabulary, POS tag, and n-gram diversity, while either maintaining or decreasing the Jaccard similarity and Normalized Word Overlap. Our net changes lead to an increase in the model performance. Most instances show accuracy closer to the new average accuracy for T1 (0.64); additionally, the instance similarity bins range from 0.35-0.75, which indicates better inductive bias for the model to understand and solve the task.
