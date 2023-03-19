@@ -206,7 +206,7 @@ The modification stages for T1 are:
 
 ---
 
-**Definition:** _Write a correct answer to the given question based on its associated fact. You answer will always be contained within the fact, so for output, select the shortest continuous span (i.e., substring) of text from the fact that is relevant to the question.  Things to Avoid: 1. Do not introduce new vocabulary (not previously seen in the input) in the output. 2. The question is always a paraphrase of the fact. 3. The expected model response is typically the word/phrase/sentence from the fact that is absent from the question. Emphasis and Caution: 1. The correct answer can vary in length as a word, phrase or sentence that lies within the fact. 2. An incorrect answer might repeat a word already present in the question, or use a completely novel term absent from the input ._
+**Definition:** _Write a correct answer to the given question based on its associated fact. You answer will always be contained within the fact, so for output, select or paraphrase the shortest continuous span (i.e., substring) of text from the fact that is relevant to the question.  Things to Avoid: 1. Do not introduce new vocabulary (not previously seen in the input) in the output. 2. The question is always a paraphrase of the fact. 3. The expected model response is typically the word/phrase/sentence from the fact that is absent from the question. Emphasis and Caution: 1. The correct answer can vary in length as a word, phrase or sentence that lies within the fact. 2. An incorrect answer might repeat a word already present in the question, or use a completely novel term absent from the input ._
 
 ---
 
@@ -227,8 +227,13 @@ The modification stages for T1 are:
 3.
             "input": "Fact: automobile engines burn gasoline to convert the fuel's energy into mechanical energy. \nQuestion: Why do automobile engines burn gasoline?",
             "output": "Automobiles burn gasoline to release the chemical energy of the fuel to provide mechanical energy."
-            "explanation": "The answer is present in the span of the fact."
-            
+            "explanation": "The question asks 'why' and the exact text of the fact is restated to answer to the question."
+4.
+            "input": "Fact: Scales are used to determine weight in pounds. \nQuestion: How can we find out how much something weighs?",
+            "output": "Using scales."
+            "explanation": "The output modifies the tense of the verb from the fact and combines it with the subject of the fact 'scales' in order to appropriately respond to the input query."
+
+           
 ---
 
 **We replace negative examples so that they do not overlap with the positive examples. We select examples that use 'Wh' questions not seen in the positive examples, i.e., the nature of the paraphrase of the fact into the question changes. Each explanation reiterates different aspects of the definition to improve inductive bias for the model. However, the language used in the explanations is comparably diverse to the positive examples; we decrease the jaccard similarity between n-grams and increase the unique vocabulary contributed.**
@@ -236,6 +241,7 @@ The modification stages for T1 are:
 ---
 
 **Negative Examples:**
+
 1.
             "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
             "output": "Plastic.",
