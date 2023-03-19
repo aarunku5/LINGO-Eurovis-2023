@@ -164,51 +164,53 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
   * When considering the proportion of the length that has unique vocabulary however, T5, T8, T9, T10 have the highest contributions. These tasks are also among those ones that show the lowest model performance. 
   * We note that tasks with the longer definitions (T6, T7) show higher model performance.
 
-<img src="Images/6b.png" alt= "Bias Heat" width="1200" height="525">
+<img src="Images/6b.png" alt= "Bias Heat P" width="1200" height="525">
 
 * In the above heatmaps, gray cells imply that no samples belong to that word similarity bin.
-* 
+* Comparing positive examples for task instructions, those instructions with higher model performance have higher Jaccard values (with respect to all POS tags and n-grams) in those task instance bins with high similarity.
+  * T5, T8-T10 do not display high jaccard values, so they have greater linguistic variation. This occurs despite T8 following simlar explanation patterns for positive examples as T8 generates a diverse output range, in a different linguistic style to other tasks.
+  * The higher similarities seen in T1-T4 stem from templatized explanations being used for the positive examples.
+  * Though T6, T7 display relatively more linguistic variation in the explanations, they have a very high input volume; this implies that the input volume dictates the level of Jaccard similarity statistics reported for these tasks.
+* The normalized word overlap for n-grams also follows a similar pattern to the Jaccard Similarity.
+
+<img src="Images/6c.png" alt= "Bias Heat N" width="1200" height="525">
+
+
+* In the above heatmaps, gray cells imply that no samples belong to that word similarity bin.
+* Comparing negative examples for task instructions, those instructions with higher model performance have higher Jaccard values in those task instance bins with high similarity. 
+  * However, the relative values of the similarity are lower than those of positive examples across all the tasks.
+  * We specifically compare the Jaccard Similarity and Normalized Word Overlap of n-grams, considering that negative example explanations are easily perceived to have higher linguistic diversity across all the tasks.
+  * T4, T5, T9 show some level of templatization in the explanation text; these tasks have different levels of model performance and varying levels of  Jaccard similarity/Overlap bias for higher word similarity bins while they show markedly low values for low similarity bins.
+  * T2, T8 have only 1 negative example each. This implies that they might not adequately define the task, particularly in the case of T8 which has lower model performance; these tasks also exhibit lower similarity/overlap values with higher word similarity bins. 
+  * T6 has identical input passages for all the negative examples, and similarly structured explanations; so it might insufficiently contextualize the task.
+  * The remaining tasks show sufficient variation in terms of linguistic diversity.
 
 **Insight:
 * Longer definitions lead to higher performance. These definitions contain additional text like things to avoid, emphasis on the task nuance, and caution when evaluating task samples, that more robustly define the task for the model. This is a positive consideration that should be used to revise T1.
-* 
+* Positive examples require more linguistically diverse explanations. This is particularly true for tasks with lower volumes of input/output, as high jaccard similarity values are more likely to stem from explanation as opposed to the input content (when compared to tasks T6, T7, where the length of input is highly weighted.
+* Negative examples already have high linguistic diversity in the explanations. However, for some of the tasks, there are very few negative examples; this implies that the task might not be adequately defined for the model. Therefore, a decreased model performance might arise from insufficient inductive bias given by the instruction, as opposed to low spurious bias. 
+* Throughout, we see that there is also not much overlap between the example explanations and definition text. While templatization of explanations as seen in T2 or T5 might restrict model capabilities, generating structured explanations, which contain linguistically or logically diverse content in the context of 'Things to Avoid' or 'Emphasis and Caution' from the definition might promote the model's reasoning capabilities while lowering spurious bias.
 **
+
+---
+
+## Impact of Instruction Modification
+
+The modification stages are: 
+* Definition modified
+* Example explanations modified 
+* Example text modified (i.e., new examples either replace or are added to the instruction)
+
+We discuss motivation of the change made with reference to T2-T10 performance, as well as the implications of changes in terms of:
+(i) effect on model performance
+(ii) effect on bias-metrics
+(iii) correlation with other tasks
+
 
 - Defn/PE/NE
 - Count, Jaccard Sim, Overlap: unique vocab, adj, adv, v, n, bi, tri
 
 Owen checks the unique vocabulary contributed by examples in each task instruction (5.1). He finds that T6 and T7 contribute the highest unique vocabulary, while T1–T4 contribute the lowest. T6 and T7 are also the hardest for the model to solve (as previously seen in (4)). Next, Owen examines the Jaccard Similarity of ad- verbs across full task instructions compared against their respective task instances (5.2). Here, T5–T7 show the lowest values, which indicates higher variation in the data. Owen can partially attribute this to non-repetition of phrases from the definition in the example explanations.
 
----
-
-## Impact of Instruction Modification
-
-The variants of T1 can be found in the subfolder "Variants" (V1-V8). The variants can be grouped into 3 modification stages:
-* V1-V2: Definition modified
-* V3-V5: Example explanations modified 
-* V6-V8: Example text modified (i.e., new examples either replace or are added to the instruction)
-
-We discuss motivation of the change made with reference to T2-T10 performance, as well as the implications of variants in terms of:
-(i) effect on model performance
-(ii) effect on bias-metrics
-(iii) correlation with other tasks
-
-Note: 
-* Changes made for each stage of modification are carried over to the next stage. 
-* We summarize the change in respective statistics across all variants in table form for the purpose of brevity. 
-* Updated panels are shown only for V8 (the final variant). 
-
-### V1
-
 (6) Finally, Owen modifies the task instruction for T1, in order to (i) reduce the similarity bias between instruction examples and task instances, and (ii) reduce overlap between the instruction definition and instruction example explanations. He updates the definition and replaces a positive example, so that the instruction now contributes a higher proportion of vocabulary and adverbs (6.1). Owen notices that the beeswarm updates (6.2) for T1 to show decreased overall performance, with fewer samples in similarity bins > 0.9 as well as fewer samples crossing 80% accuracy. Additionally, T1 now ex- hibits lower Jaccard similarity (6.3) and higher unique vocabulary (6.4). Overall, Owen’s modifications achieve a decrease in accu- racy, Jaccard similarity for words, POS-tags, and n-grams, and an increase in unique vocabulary. Hence by iteratively changing the task instruction (for instance, replacing more examples) Owen can further reduce instruction bias for T1, and create a more difficult task instruction for the model to solve.
-
-### V2
-### V3
-### V4
-### V5
-### V6
-### V7
-### V8
-
-
 
