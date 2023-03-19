@@ -214,7 +214,7 @@ The modification stages for T1 are:
 
 ---
 
-**Definition:** _Write a correct answer to the given question based on its associated fact. You answer will always be contained within the fact, so for output, select or paraphrase the shortest continuous span (i.e., substring) of text from the fact that is relevant to the question.  Things to Avoid: 1. Do not introduce new vocabulary (not previously seen in the input) in the output. 2. The question is always a paraphrase of the fact. 3. The expected model response is typically the word/phrase/sentence from the fact that is absent from the question. Emphasis and Caution: 1. The correct answer can vary in length as a word, phrase or sentence that lies within the fact. 2. An incorrect answer might repeat a word already present in the question, or use a completely novel term absent from the input ._
+**Definition:** _Write a correct answer to the given question based on its associated fact. You answer will always be contained within the fact, so for output, select or paraphrase the shortest continuous span (i.e., substring) of text from the fact that is relevant to the question.  Things to Avoid: 1. Do not introduce new vocabulary (not previously seen in the input) in the output. 2. The question is always a paraphrase of the fact. 3. The expected model response is typically the word/phrase/sentence from the fact that is absent from the question. Emphasis and Caution: 1. The correct answer can vary in length as a word, phrase or sentence that lies within the fact. 2. An incorrect answer might repeat a word already present in the question, or use a completely novel term absent from the input._
 
 ---
 
@@ -254,19 +254,19 @@ The modification stages for T1 are:
 **Negative Examples:**
 
 1.
-            "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
-            "output": "Plastic.",
-            "explanation": "Even though the answer \"plastic\" is factually correct as plastic can harm animals, since it is not present in the given fact is is not a good answer. Note that, the correct answer words must lie within the associated fact."
-
-2.
             "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
             "output": "soil and trees.",
-            "explanation": "Even though the answer \"soil and trees\" is factually correct as they both are formed by rain, since it is not present in the given fact this is a bad answer. Note that, the correct answer words must lie within the associated fact wo be a good answer."
+            "explanation": "Even though the answer \"soil and trees\" is factually correct as they both are formed by rain, since it is not present in the given fact this is a bad answer. Note that, the correct answer words must lie within the associated fact to be a good response."
 
-3.
-            "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
-            "output": "survived.",
-            "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"survive\". Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts."
+2.
+            "input": "Fact: A fertilized egg can create an offspring if it's carried until birth. \nQuestion: When does a fertilized egg become an offspring?",
+            "output": "When it's carried",
+            "explanation": "While the answer is a substring of the fact, it remains a wrong output. You should have utilized all the remaining information in the fact that was absent from the question to generate a phrase such as \"when it's carried until birth\". While the task definition asks for the shortest possible span of text to be used, it also species that all information relevant to the question must be reported in the answer."
+
+2.
+            "input": "Fact: Frogs make sounds with the larynx which is in the throat. \nQuestion: Where is the larynx located?",
+            "output": "on the throat of a frog",
+            "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"in the throat\" instead of 'on'; additionally, larynxes are located in the throats of all species and not just frogs so the second half of the generated output detracts from its general correctness. Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts.""
             
 ---
 
