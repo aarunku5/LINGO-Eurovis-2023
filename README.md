@@ -185,26 +185,74 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
   * T6 has identical input passages for all the negative examples, and similarly structured explanations; so it might insufficiently contextualize the task.
   * The remaining tasks show sufficient variation in terms of linguistic diversity.
 
-**Insight:
+**Insight:**
 * Longer definitions lead to higher performance. These definitions contain additional text like things to avoid, emphasis on the task nuance, and caution when evaluating task samples, that more robustly define the task for the model. This is a positive consideration that should be used to revise T1.
 * Positive examples require more linguistically diverse explanations. This is particularly true for tasks with lower volumes of input/output, as high jaccard similarity values are more likely to stem from explanation as opposed to the input content (when compared to tasks T6, T7, where the length of input is highly weighted.
 * Negative examples already have high linguistic diversity in the explanations. However, for some of the tasks, there are very few negative examples; this implies that the task might not be adequately defined for the model. Therefore, a decreased model performance might arise from insufficient inductive bias given by the instruction, as opposed to low spurious bias. 
 * Throughout, we see that there is also not much overlap between the example explanations and definition text. While templatization of explanations as seen in T2 or T5 might restrict model capabilities, generating structured explanations, which contain linguistically or logically diverse content in the context of 'Things to Avoid' or 'Emphasis and Caution' from the definition might promote the model's reasoning capabilities while lowering spurious bias.
-**
 
 ---
 
 ## Impact of Instruction Modification
 
-The modification stages are: 
+The modification stages for T1 are: 
 * Definition modified
 * Example explanations modified 
 * Example text modified (i.e., new examples either replace or are added to the instruction)
 
-We discuss motivation of the change made with reference to T2-T10 performance, as well as the implications of changes in terms of:
-(i) effect on model performance
-(ii) effect on bias-metrics
-(iii) correlation with other tasks
+### Updated Task Content
+
+**The definition length has been increased. We add extra information to Things to Avoid and Emphasis & Caution. We increase the proportion of unique vocabulary for the increased definition length. We also define how different parts of the input are related to provide a shortcut on how to apply commonsense reasoning to solve a given instance.**
+
+---
+
+**Definition:** _Write a correct answer to the given question based on its associated fact. You answer will always be contained within the fact, so for output, select the shortest continuous span (i.e., substring) of text from the fact that is relevant to the question.  Things to Avoid: 1. Do not introduce new vocabulary (not previously seen in the input) in the output. 2. The question is always a paraphrase of the fact. 3. The expected model response is typically the word/phrase/sentence from the fact that is absent from the question. Emphasis and Caution: 1. The correct answer can vary in length as a word, phrase or sentence that lies within the fact. 2. An incorrect answer might repeat a word already present in the question, or use a completely novel term absent from the input ._
+
+---
+
+**We reduce the number of positive examples. Examples referencing similar concepts like rain or lightning are removed to provide greater contextual variation, and we add one new example with a different domain of fact. Each explanation for positive examples reiterates different aspects of the definition to justify why an answer is correct or incorrect. This reduces the overlap between instances and the examples, while providing a richer reasoning context (i.e., higher inductive bias) for the model to solve the sample.**
+
+---
+
+**Positive Examples:**
+
+1.
+            "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
+            "output": "pesticides.",
+            "explanation": "The question paraphrases the fact and does not use the word 'pesticides'."
+2.
+            "input": "Fact: a radio converts electrical energy into sound. \nQuestion: a radio converts electrical energy into?",
+            "output": "sound.",
+            "explanation": "The answer is present in the span of the fact. The fact is truncated to generate the question, so the remaining part of the fact is the answer."
+3.
+            "input": "Fact: automobile engines burn gasoline to convert the fuel's energy into mechanical energy. \nQuestion: Why do automobile engines burn gasoline?",
+            "output": "Automobiles burn gasoline to release the chemical energy of the fuel to provide mechanical energy."
+            "explanation": "The answer is present in the span of the fact."
+            
+---
+
+**We replace negative examples so that they do not overlap with the positive examples. We select examples that use 'Wh' questions not seen in the positive examples, i.e., the nature of the paraphrase of the fact into the question changes. Each explanation reiterates different aspects of the definition to improve inductive bias for the model. However, the language used in the explanations is comparably diverse to the positive examples; we decrease the jaccard similarity between n-grams and increase the unique vocabulary contributed.**
+
+---
+
+**Negative Examples:**
+1.
+            "input": "Fact: pesticides can harm animals. \nQuestion: What can harm animals?",
+            "output": "Plastic.",
+            "explanation": "Even though the answer \"plastic\" is factually correct as plastic can harm animals, since it is not present in the given fact is is not a good answer. Note that, the correct answer words must lie within the associated fact."
+2.
+            "input": "Fact: rain can help form soil. \nQuestion: Rain can help form?",
+            "output": "soil and trees.",
+            "explanation": "The words \"and trees\" are not present in the associated fact. So, it's a bad answer."
+3.
+            "input": "Fact: rain helps plants to survive. \nQuestion: rain helps plants to?",
+            "output": "survived.",
+            "explanation": "Here, the answer does not fit with the question grammatically. The correct answer would have been \"survive\". Remember to copy your answer directly from the given fact, as questions have been formed after rearranging their associated facts."
+            
+---
+
+
+
 
 
 - Defn/PE/NE
