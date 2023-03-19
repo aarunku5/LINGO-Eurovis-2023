@@ -173,7 +173,7 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
   * Though T6, T7 display relatively more linguistic variation in the explanations, they have a very high input volume; this implies that the input volume dictates the level of Jaccard similarity statistics reported for these tasks.
 * The normalized word overlap for n-grams also follows a similar pattern to the Jaccard Similarity.
 
-<img src="Images/6c.png" alt= "Bias Heat N" width="1200" height="525">
+<img src="Images/6c.png" alt= "Bias Heat N" width="1200" height="325">
 
 
 * In the above heatmaps, gray cells imply that no samples belong to that word similarity bin.
