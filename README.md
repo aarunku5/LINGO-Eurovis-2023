@@ -158,6 +158,25 @@ https://user-images.githubusercontent.com/54283572/226142836-72003a4c-f28d-4527-
 
 ## Bias Metrics
 
+<img src="Images/6a.png" alt= "Bias Bar" width="1200" height="675">
+
+* Comparing the definitions of the task instructions, T7-T10 contribute higher proportions of unique vocabulary. These tasks also have the maximum length. 
+  * When considering the proportion of the length that has unique vocabulary however, T5, T8, T9, T10 have the highest contributions. These tasks are also among those ones that show the lowest model performance. 
+  * We note that tasks with the longer definitions (T6, T7) show higher model performance.
+
+<img src="Images/6b.png" alt= "Bias Heat" width="1200" height="675">
+
+* In the above heatmaps, gray cells imply that no samples belong to that word similarity bin.
+* 
+
+**Insight:
+* Longer definitions lead to higher performance. These definitions contain additional text like things to avoid, emphasis on the task nuance, and caution when evaluating task samples, that more robustly define the task for the model. This is a positive consideration that should be used to revise T1.
+* 
+**
+
+- Defn/PE/NE
+- Count, Jaccard Sim, Overlap: unique vocab, adj, adv, v, n, bi, tri
+
 Owen checks the unique vocabulary contributed by examples in each task instruction (5.1). He finds that T6 and T7 contribute the highest unique vocabulary, while T1–T4 contribute the lowest. T6 and T7 are also the hardest for the model to solve (as previously seen in (4)). Next, Owen examines the Jaccard Similarity of ad- verbs across full task instructions compared against their respective task instances (5.2). Here, T5–T7 show the lowest values, which indicates higher variation in the data. Owen can partially attribute this to non-repetition of phrases from the definition in the example explanations.
 
 ---
